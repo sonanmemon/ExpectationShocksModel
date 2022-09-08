@@ -1,0 +1,593 @@
+\documentclass[12pt]{article}
+\pdfminorversion=5 
+\pdfcompresslevel=9
+\pdfobjcompresslevel=2
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage[table]{xcolor}
+\usepackage{subfigure}
+\usepackage{bigints}
+\usepackage{bbm}
+\usepackage{xr}
+\usepackage{lipsum}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\definecolor{redd}{rgb}{0.8, 0.1, 0.1}
+\definecolor{navyblue}{rgb}{0, 0.6, 0.2}
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
+\definecolor{brickred}{rgb}{0.8, 0.25, 0.33}
+\definecolor{cornellred}{rgb}{0.7, 0.11, 0.11}
+\usepackage[colorlinks,linkcolor=navyblue,urlcolor=blue,citecolor=navyblue]{hyperref}
+\newcommand{\navy}[1]{\textcolor{blue}{\bf #1}}
+\newcommand{\navymth}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\usepackage{subfigure}
+\usepackage[authoryear,round]{natbib}
+\usepackage{sectsty}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage[]{morefloats}
+\usepackage{booktabs}
+\usepackage{float}
+%\usepackage[runin]{abstract}
+%\abslabeldelim{\;}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{threeparttable}
+%\usepackage{mathptmx}
+%\usepackage{newtxmath}
+%\usepackage{times}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{rotating}
+\UseRawInputEncoding
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage[newcommands]{ragged2e}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{setspace} 
+\doublespacing
+\usepackage{mathpazo}
+\usepackage{etoolbox}
+
+\setcounter{MaxMatrixCols}{12}
+
+
+
+
+
+\geometry{left=1.0in,right=1.0in,top=1.0in,bottom=1.0in}
+
+\parskip5pt
+\parindent15pt
+\renewcommand{\baselinestretch}{1.1}
+
+\newcommand*{\theorembreak}{\usebeamertemplate{theorem end}\framebreak\usebeamertemplate{theorem begin}}
+
+\newcommand{\newtopic}[1]{\textcolor{Green}{\Large \bf #1}}
+
+
+\definecolor{pale}{RGB}{235, 235, 235}
+\definecolor{pale2}{RGB}{175,238,238}
+\definecolor{turquois4}{RGB}{0,134,139}
+
+% Typesetting code
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\usepackage{minted}
+\usemintedstyle{friendly}
+\newminted{python}{mathescape,frame=lines,framesep=4mm,bgcolor=bg}
+\newminted{ipython}{mathescape,frame=lines,framesep=4mm,bgcolor=bg}
+\newminted{julia}{mathescape,frame=lines,framesep=4mm,bgcolor=bg}
+\newminted{c}{mathescape,linenos=true}
+\newminted{r}{mathescape,  frame=none, baselinestretch=1, framesep=2mm}
+\renewcommand{\theFancyVerbLine}{\sffamily
+	\textcolor[rgb]{0.5,0.5,1.0}{\scriptsize {\arabic{FancyVerbLine}}}}
+
+
+\usepackage{stmaryrd}
+
+\newcommand{\Fact}{\textcolor{Brown}{\bf Fact. }}
+\newcommand{\Facts}{\textcolor{Brown}{\bf Facts }}
+\newcommand{\keya}{\textcolor{turquois4}{\bf Key Idea. }}
+\newcommand{\Factnodot}{\textcolor{Brown}{\bf Fact }}
+\newcommand{\Eg}{\textcolor{ForestGreen}{Example. }}
+\newcommand{\Egs}{\textcolor{ForestGreen}{Examples. }}
+\newcommand{\Ex}{{\bf Ex. }}
+\newcommand{\Thm}{\textcolor{Brown}{\bf Theorem. }}
+\newcommand{\Prf}{\textcolor{turquois4}{\bf Proof.}}
+\newcommand{\Ass}{\textcolor{turquois4}{\bf Assumption.}} 
+\newcommand{\Lem}{\textcolor{Brown}{\bf Lemma. }}
+
+%source code 
+
+
+
+% cali
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{subfigure}
+
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+
+\newcommand\T{{\mathpalette\raiseT\intercal}}
+\newcommand\raiseT[2]{\raisebox{0.25ex}{$#1#2$}}
+
+\DeclareMathOperator{\cl}{cl}
+%\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\interior}{int}
+\DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\kernel}{ker}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\determinant}{det}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\range}{rng}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\mse}{mse}
+\DeclareMathOperator{\se}{se}
+\DeclareMathOperator{\row}{row}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\dimension}{dim}
+\DeclareMathOperator{\fracpart}{frac}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\colspace}{colspace}
+
+\providecommand{\inner}[1]{\left\langle{#1}\right\rangle}
+
+% mics short cuts and symbols
+% mics short cuts and symbols
+\newcommand{\st}{\ensuremath{\ \mathrm{s.t.}\ }}
+\newcommand{\setntn}[2]{ \{ #1 : #2 \} }
+\newcommand{\cf}[1]{ \lstinline|#1| }
+\newcommand{\otms}[1]{ \leftidx{^\circ}{#1}}
+
+\newcommand{\fore}{\therefore \quad}
+\newcommand{\tod}{\stackrel { d } {\to} }
+\newcommand{\tow}{\stackrel { w } {\to} }
+\newcommand{\toprob}{\stackrel { p } {\to} }
+\newcommand{\toms}{\stackrel { ms } {\to} }
+\newcommand{\eqdist}{\stackrel {\textrm{ \scriptsize{d} }} {=} }
+\newcommand{\iidsim}{\stackrel {\textrm{ {\sc iid }}} {\sim} }
+\newcommand{\1}{\mathbbm 1}
+\newcommand{\dee}{\,{\rm d}}
+\newcommand{\given}{\, | \,}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+\renewcommand{\rho}{\varrho}
+
+\newcommand{\htau}{ \hat \tau }
+\newcommand{\hgamma}{ \hat \gamma }
+
+\newcommand{\boldx}{ {\mathbf x} }
+\newcommand{\boldu}{ {\mathbf u} }
+\newcommand{\boldv}{ {\mathbf v} }
+\newcommand{\boldw}{ {\mathbf w} }
+\newcommand{\boldy}{ {\mathbf y} }
+\newcommand{\boldb}{ {\mathbf b} }
+\newcommand{\bolda}{ {\mathbf a} }
+\newcommand{\boldc}{ {\mathbf c} }
+\newcommand{\boldi}{ {\mathbf i} }
+\newcommand{\bolde}{ {\mathbf e} }
+\newcommand{\boldp}{ {\mathbf p} }
+\newcommand{\boldq}{ {\mathbf q} }
+\newcommand{\bolds}{ {\mathbf s} }
+\newcommand{\boldt}{ {\mathbf t} }
+\newcommand{\boldz}{ {\mathbf z} }
+
+\newcommand{\boldzero}{ {\mathbf 0} }
+\newcommand{\boldone}{ {\mathbf 1} }
+
+\newcommand{\boldalpha}{ {\boldsymbol \alpha} }
+\newcommand{\boldbeta}{ {\boldsymbol \beta} }
+\newcommand{\boldgamma}{ {\boldsymbol \gamma} }
+\newcommand{\boldtheta}{ {\boldsymbol \theta} }
+\newcommand{\boldxi}{ {\boldsymbol \xi} }
+\newcommand{\boldtau}{ {\boldsymbol \tau} }
+\newcommand{\boldepsilon}{ {\boldsymbol \epsilon} }
+\newcommand{\boldmu}{ {\boldsymbol \mu} }
+\newcommand{\boldSigma}{ {\boldsymbol \Sigma} }
+\newcommand{\boldOmega}{ {\boldsymbol \Omega} }
+\newcommand{\boldPhi}{ {\boldsymbol \Phi} }
+\newcommand{\boldLambda}{ {\boldsymbol \Lambda} }
+\newcommand{\boldphi}{ {\boldsymbol \phi} }
+
+\newcommand{\Sigmax}{ {\boldsymbol \Sigma_{\boldx}}}
+\newcommand{\Sigmau}{ {\boldsymbol \Sigma_{\boldu}}}
+\newcommand{\Sigmaxinv}{ {\boldsymbol \Sigma_{\boldx}^{-1}}}
+\newcommand{\Sigmav}{ {\boldsymbol \Sigma_{\boldv \boldv}}}
+
+\newcommand{\hboldx}{ \hat {\mathbf x} }
+\newcommand{\hboldy}{ \hat {\mathbf y} }
+\newcommand{\hboldb}{ \hat {\mathbf b} }
+\newcommand{\hboldu}{ \hat {\mathbf u} }
+\newcommand{\hboldtheta}{ \hat {\boldsymbol \theta} }
+\newcommand{\hboldtau}{ \hat {\boldsymbol \tau} }
+\newcommand{\hboldmu}{ \hat {\boldsymbol \mu} }
+\newcommand{\hboldbeta}{ \hat {\boldsymbol \beta} }
+\newcommand{\hboldgamma}{ \hat {\boldsymbol \gamma} }
+\newcommand{\hboldSigma}{ \hat {\boldsymbol \Sigma} }
+
+\newcommand{\boldA}{\mathbf A}
+\newcommand{\boldB}{\mathbf B}
+\newcommand{\boldC}{\mathbf C}
+\newcommand{\boldD}{\mathbf D}
+\newcommand{\boldI}{\mathbf I}
+\newcommand{\boldL}{\mathbf L}
+\newcommand{\boldM}{\mathbf M}
+\newcommand{\boldP}{\mathbf P}
+\newcommand{\boldQ}{\mathbf Q}
+\newcommand{\boldR}{\mathbf R}
+\newcommand{\boldX}{\mathbf X}
+\newcommand{\boldU}{\mathbf U}
+\newcommand{\boldV}{\mathbf V}
+\newcommand{\boldW}{\mathbf W}
+\newcommand{\boldY}{\mathbf Y}
+\newcommand{\boldZ}{\mathbf Z}
+
+\newcommand{\bSigmaX}{ {\boldsymbol \Sigma_{\hboldbeta}} }
+\newcommand{\hbSigmaX}{ \mathbf{\hat \Sigma_{\hboldbeta}} }
+
+\newcommand{\RR}{\mathbbm R}
+\newcommand{\CC}{\mathbbm C}
+\newcommand{\NN}{\mathbbm N}
+\newcommand{\PP}{\mathbbm P}
+\newcommand{\EE}{\mathbbm E \nobreak\hspace{.1em}}
+\newcommand{\EEP}{\mathbbm E_P \nobreak\hspace{.1em}}
+\newcommand{\ZZ}{\mathbbm Z}
+\newcommand{\QQ}{\mathbbm Q}
+
+
+\newcommand{\XX}{\mathcal X}
+
+\newcommand{\aA}{\mathcal A}
+\newcommand{\fF}{\mathscr F}
+\newcommand{\bB}{\mathscr B}
+\newcommand{\iI}{\mathscr I}
+\newcommand{\rR}{\mathscr R}
+\newcommand{\dD}{\mathcal D}
+\newcommand{\lL}{\mathcal L}
+\newcommand{\llL}{\mathcal{H}_{\ell}}
+\newcommand{\gG}{\mathcal G}
+\newcommand{\hH}{\mathcal H}
+\newcommand{\nN}{\textrm{\sc n}}
+\newcommand{\lN}{\textrm{\sc ln}}
+\newcommand{\pP}{\mathscr P}
+\newcommand{\qQ}{\mathscr Q}
+\newcommand{\xX}{\mathcal X}
+
+\newcommand{\ddD}{\mathscr D}
+
+
+\newcommand{\R}{{\texttt R}}
+\newcommand{\risk}{\mathcal R}
+\newcommand{\Remp}{R_{{\rm emp}}}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ess}{ \textrm{{\sc ess}} }
+\newcommand{\tss}{ \textrm{{\sc tss}} }
+\newcommand{\rss}{ \textrm{{\sc rss}} }
+\newcommand{\rssr}{ \textrm{{\sc rssr}} }
+\newcommand{\ussr}{ \textrm{{\sc ussr}} }
+\newcommand{\zdata}{\mathbf{z}_{\mathcal D}}
+\newcommand{\Pdata}{P_{\mathcal D}}
+\newcommand{\Pdatatheta}{P^{\mathcal D}_{\theta}}
+\newcommand{\Zdata}{Z_{\mathcal D}}
+
+
+\newcommand{\e}[1]{\mathbbm{E}[{#1}]}
+\newcommand{\p}[1]{\mathbbm{P}({#1})}
+
+%\theoremstyle{plain}
+%\newtheorem{axiom}{Axiom}[section]
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{corollary}{Corollary}[section]
+%\newtheorem{lemma}{Lemma}[section]
+%\newtheorem{proposition}{Proposition}[section]
+%
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}[section]
+%\newtheorem{example}{Example}[section]
+%\newtheorem{remark}{Remark}[section]
+%\newtheorem{notation}{Notation}[section]
+%\newtheorem{assumption}{Assumption}[section]
+%\newtheorem{condition}{Condition}[section]
+%\newtheorem{exercise}{Ex.}[section]
+%\newtheorem{fact}{Fact}[section]
+
+
+\usepackage[T1]{fontenc}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{assumption}{Assumption}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{observation}{Observation}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+%\input{tcilatex}
+
+\makeatletter
+\def\title@font{\Large\bfseries}
+\let\ltx@maketitle\@maketitle
+\def\@maketitle{\bgroup%
+	\let\ltx@title\@title%
+	\def\@title{\resizebox{\textwidth}{!}{%
+			\mbox{\title@font\ltx@title}%
+	}}%
+	\ltx@maketitle%
+	\egroup}
+\makeatother
+\usepackage{setspace}
+\usepackage{amsmath}
+\onehalfspacing
+\newenvironment{p_enumerate}{
+	\begin{enumerate}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+	}{\end{enumerate}}
+\sectionfont{\centering\mdseries\scshape\bfseries}
+\subsectionfont{\raggedright\mdseries\scshape\bfseries}
+\subsubsectionfont{\flushleft\mdseries\itshape\bfseries}
+\makeatletter
+\def\@seccntformat#1{\csname the#1\endcsname.\quad}
+\makeatother
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+		\hbox{}\nobreak\hfil(#1)%
+		\parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+{\savebox\mybox{#1}\begin{quote}}
+	{\signed{\usebox\mybox}\end{quote}}
+
+\pdfminorversion=4
+
+\makeatletter
+\newcommand{\changeoperator}[1]{%
+	\csletcs{#1@saved}{#1@}%
+	\csdef{#1@}{\changed@operator{#1}}%
+}
+\newcommand{\changed@operator}[1]{%
+	\mathop{%
+		\mathchoice{\textstyle\csuse{#1@saved}}
+		{\csuse{#1@saved}}
+		{\csuse{#1@saved}}
+		{\csuse{#1@saved}}%
+	}%
+}
+\makeatother
+
+\changeoperator{sum}
+\changeoperator{
+	prod}
+
+\begin{document}
+	
+	
+	
+	
+	
+	
+	\vspace{-0.5ex}
+	
+	
+	
+	
+	
+	
+	
+	
+	\newpage{}
+	
+	
+	
+	
+	
+	
+	\title{{Expectation Shocks  %\thanks {}
+			%\title{{Money Demand Breakdown: An international Investigation
+			}}
+			
+			
+			
+			%\date{This version: February, 2016\\
+				%{First version: December, 2015}}
+			\date{This version: September 2022}%\\This version: February, 2017}
+		
+		
+		\author{Sonan Memon\footnote{Research Economist, PIDE, Islamabad. \texttt{smemon@pide.org.pk}}}
+		
+		
+		
+		\newpage{}
+		
+		\maketitle
+		\vspace{-2ex}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		\begin{center}
+			\line(1,0){470}
+		\end{center}
+		\begin{spacing}{1.1}
+			\vspace{-3ex}
+			\begin{abstract}
+				\noindent 
+				\footnote{The replication code of this paper, using Python, R and Julia is available on my github page: {\color{blue}{https://github.com/sonanmemon}}}.
+				%I evaluate the forecasting potential of my method through VAR (Vector Autoregressive Models) models and forecast error variance decompositions (FEVD).
+			\end{abstract}
+		\end{spacing}
+		\textbf{Keywords:}  {}\\
+		\textbf{JEL Classification:}
+		%\textbf{JEL Classifications:}
+		\\
+		\begin{center}
+			\vspace{-8ex}
+			\line(1,0){470}
+		\end{center}
+		\pagenumbering{arabic}
+		\baselineskip=18pt 
+		
+		\newpage{}
+		
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[width=0.4\linewidth]{pidelogo.jpg}		
+				\caption*{}
+			\end{center}
+		\end{figure}
+		
+		\vspace{-8ex}
+		
+		
+		
+		\tableofcontents
+		
+		\newpage{}
+		
+		\vspace{-8ex}
+		
+		
+		
+		
+		\section{Motivation}
+		
+		\newpage
+		
+		\section{Aggregate Demand and Aggregate Supply Model}
+		
+		\newpage
+		
+		
+		
+		
+		\section{Impulse Responses}
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		\begin{figure}[H]
+				\includegraphics[width=0.5\linewidth]{inflation_expectationshock.pdf}
+				\hfill
+				\includegraphics[width=0.5\linewidth]{output_expectationshock.pdf}
+				\hfill
+				\begin{Center}
+				\includegraphics[width=0.5\linewidth]{interestrates_expectationshock.pdf}
+				\end{Center}
+				\caption{Impulse Responses For 1 Period Expectation Shock}
+		\end{figure}
+		
+		
+			\begin{figure}[H]
+			\includegraphics[width=0.5\linewidth]{inflation_expectationshock4period.pdf}
+			\hfill
+			\includegraphics[width=0.5\linewidth]{output_expectationshock4period.pdf}
+			\hfill
+			\begin{Center}
+				\includegraphics[width=0.5\linewidth]{interestrates_expectationshock4period.pdf}
+			\end{Center}
+			\caption{Impulse Responses For 4 Period Expectation Shock}
+		\end{figure}
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.5\linewidth]{inflation_expectationshock50period.pdf}
+		\hfill
+		\includegraphics[width=0.5\linewidth]{output_expectationshock50period.pdf}
+		\hfill
+		\begin{Center}
+			\includegraphics[width=0.5\linewidth]{interestrates_expectationshock50period.pdf}
+		\end{Center}
+		\caption{Impulse Responses For Permanent Expectation Shock}
+	\end{figure}
+
+
+	\begin{figure}[H]
+	\includegraphics[width=0.5\linewidth]{inflation_seriesofexpectationshocks.pdf}
+	\hfill
+	\includegraphics[width=0.5\linewidth]{output_seriesofexpectationshocks.pdf}
+	\hfill
+	\begin{Center}
+		\includegraphics[width=0.5\linewidth]{interestrates_seriesofexpectationshocks.pdf}
+	\end{Center}
+	\caption{Impulse Responses For Series of 3 Temporary Expectation Shocks}
+\end{figure}
+		
+		
+		\newpage
+		
+		
+		\section{Conclusion}
+		
+		
+		
+		
+		\newpage
+		
+		
+		
+		
+		
+		\section{Appendix}
+		
+	
+	
+	\newpage
+	%_________________ End of Main Matter_________________%
+	%_________________ Reference Section _______________%
+	\phantomsection % allows for correct link to Table of Contents
+	\addcontentsline{toc}{section}{References} % Adds the line "References" to Table of contents
+	\singlespacing
+	%\bibliography{references} % Uses the Bibtex-file mybibfile.bib
+	\newpage
+	\bibliographystyle{aer}
+	\bibliography{references}
+	\clearpage
+	%_________________ Space for Supplementary Material _______________%
+	
+	
+	
+	
+	%\section*{Appendix}
+	
+	
+	
+	
+	
+\end{document}
+
+
