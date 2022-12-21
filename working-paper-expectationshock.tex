@@ -1,0 +1,1315 @@
+\documentclass[12pt]{article}
+\pdfminorversion=5 
+\pdfcompresslevel=9
+\pdfobjcompresslevel=2
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage[table]{xcolor}
+\usepackage{subfigure}
+\usepackage{bigints}
+\usepackage{bbm}
+\usepackage{xr}
+\usepackage{lipsum}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\definecolor{redd}{rgb}{0.8, 0.1, 0.1}
+\definecolor{navyblue}{rgb}{0, 0.6, 0.2}
+\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
+\definecolor{brickred}{rgb}{0.8, 0.25, 0.33}
+\definecolor{cornellred}{rgb}{0.7, 0.11, 0.11}
+\usepackage[colorlinks,linkcolor=navyblue,urlcolor=blue,citecolor=navyblue]{hyperref}
+\newcommand{\navy}[1]{\textcolor{blue}{\bf #1}}
+\newcommand{\navymth}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\usepackage{subfigure}
+\usepackage[authoryear,round]{natbib}
+\usepackage{sectsty}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage[]{morefloats}
+\usepackage{booktabs}
+\usepackage{float}
+%\usepackage[runin]{abstract}
+%\abslabeldelim{\;}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{threeparttable}
+%\usepackage{mathptmx}
+%\usepackage{newtxmath}
+%\usepackage{times}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{rotating}
+\UseRawInputEncoding
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage[newcommands]{ragged2e}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{setspace} 
+\doublespacing
+\usepackage{mathpazo}
+\usepackage{etoolbox}
+
+\setcounter{MaxMatrixCols}{12}
+
+
+
+
+
+\geometry{left=1.0in,right=1.0in,top=1.0in,bottom=1.0in}
+
+\parskip5pt
+\parindent15pt
+\renewcommand{\baselinestretch}{1.1}
+
+\newcommand*{\theorembreak}{\usebeamertemplate{theorem end}\framebreak\usebeamertemplate{theorem begin}}
+
+\newcommand{\newtopic}[1]{\textcolor{Green}{\Large \bf #1}}
+
+\newcommand\Taccount[3][3cm]%
+{{\renewcommand\arraystretch{1.3}%
+		\begin{adjustbox}{width=0.4\textwidth}
+		\begin{tabular}[t]{@{}p{#1}|p{#1}@{}}
+			\multicolumn{2}{@{}c@{}}{#2}\\
+			\hline
+			\hline
+			#3
+		\end{tabular}%
+		\end{adjustbox}
+	
+}}
+
+
+\definecolor{pale}{RGB}{235, 235, 235}
+\definecolor{pale2}{RGB}{175,238,238}
+\definecolor{turquois4}{RGB}{0,134,139}
+
+% Typesetting code
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\usepackage{minted}
+\usemintedstyle{friendly}
+\newminted{python}{mathescape,frame=lines,framesep=4mm,bgcolor=bg}
+\newminted{ipython}{mathescape,frame=lines,framesep=4mm,bgcolor=bg}
+\newminted{julia}{mathescape,frame=lines,framesep=4mm,bgcolor=bg}
+\newminted{c}{mathescape,linenos=true}
+\newminted{r}{mathescape,  frame=none, baselinestretch=1, framesep=2mm}
+\renewcommand{\theFancyVerbLine}{\sffamily
+	\textcolor[rgb]{0.5,0.5,1.0}{\scriptsize {\arabic{FancyVerbLine}}}}
+
+
+\usepackage{stmaryrd}
+
+\newcommand{\Fact}{\textcolor{Brown}{\bf Fact. }}
+\newcommand{\Facts}{\textcolor{Brown}{\bf Facts }}
+\newcommand{\keya}{\textcolor{turquois4}{\bf Key Idea. }}
+\newcommand{\Factnodot}{\textcolor{Brown}{\bf Fact }}
+\newcommand{\Eg}{\textcolor{ForestGreen}{Example. }}
+\newcommand{\Egs}{\textcolor{ForestGreen}{Examples. }}
+\newcommand{\Ex}{{\bf Ex. }}
+\newcommand{\Thm}{\textcolor{Brown}{\bf Theorem. }}
+\newcommand{\Prf}{\textcolor{turquois4}{\bf Proof.}}
+\newcommand{\Ass}{\textcolor{turquois4}{\bf Assumption.}} 
+\newcommand{\Lem}{\textcolor{Brown}{\bf Lemma. }}
+
+%source code 
+
+
+
+% cali
+\usepackage{mathrsfs}
+\usepackage{bbm}
+\usepackage{subfigure}
+
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+
+\newcommand\T{{\mathpalette\raiseT\intercal}}
+\newcommand\raiseT[2]{\raisebox{0.25ex}{$#1#2$}}
+
+\DeclareMathOperator{\cl}{cl}
+%\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\interior}{int}
+\DeclareMathOperator{\Prob}{Prob}
+\DeclareMathOperator{\kernel}{ker}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\determinant}{det}
+\DeclareMathOperator{\trace}{trace}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\range}{rng}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\mse}{mse}
+\DeclareMathOperator{\se}{se}
+\DeclareMathOperator{\row}{row}
+\DeclareMathOperator{\col}{col}
+\DeclareMathOperator{\dimension}{dim}
+\DeclareMathOperator{\fracpart}{frac}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\colspace}{colspace}
+
+\providecommand{\inner}[1]{\left\langle{#1}\right\rangle}
+
+% mics short cuts and symbols
+% mics short cuts and symbols
+\newcommand{\st}{\ensuremath{\ \mathrm{s.t.}\ }}
+\newcommand{\setntn}[2]{ \{ #1 : #2 \} }
+\newcommand{\cf}[1]{ \lstinline|#1| }
+\newcommand{\otms}[1]{ \leftidx{^\circ}{#1}}
+
+\newcommand{\fore}{\therefore \quad}
+\newcommand{\tod}{\stackrel { d } {\to} }
+\newcommand{\tow}{\stackrel { w } {\to} }
+\newcommand{\toprob}{\stackrel { p } {\to} }
+\newcommand{\toms}{\stackrel { ms } {\to} }
+\newcommand{\eqdist}{\stackrel {\textrm{ \scriptsize{d} }} {=} }
+\newcommand{\iidsim}{\stackrel {\textrm{ {\sc iid }}} {\sim} }
+\newcommand{\1}{\mathbbm 1}
+\newcommand{\dee}{\,{\rm d}}
+\newcommand{\given}{\, | \,}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+
+\renewcommand{\rho}{\varrho}
+
+\newcommand{\htau}{ \hat \tau }
+\newcommand{\hgamma}{ \hat \gamma }
+
+\newcommand{\boldx}{ {\mathbf x} }
+\newcommand{\boldu}{ {\mathbf u} }
+\newcommand{\boldv}{ {\mathbf v} }
+\newcommand{\boldw}{ {\mathbf w} }
+\newcommand{\boldy}{ {\mathbf y} }
+\newcommand{\boldb}{ {\mathbf b} }
+\newcommand{\bolda}{ {\mathbf a} }
+\newcommand{\boldc}{ {\mathbf c} }
+\newcommand{\boldi}{ {\mathbf i} }
+\newcommand{\bolde}{ {\mathbf e} }
+\newcommand{\boldp}{ {\mathbf p} }
+\newcommand{\boldq}{ {\mathbf q} }
+\newcommand{\bolds}{ {\mathbf s} }
+\newcommand{\boldt}{ {\mathbf t} }
+\newcommand{\boldz}{ {\mathbf z} }
+
+\newcommand{\boldzero}{ {\mathbf 0} }
+\newcommand{\boldone}{ {\mathbf 1} }
+
+\newcommand{\boldalpha}{ {\boldsymbol \alpha} }
+\newcommand{\boldbeta}{ {\boldsymbol \beta} }
+\newcommand{\boldgamma}{ {\boldsymbol \gamma} }
+\newcommand{\boldtheta}{ {\boldsymbol \theta} }
+\newcommand{\boldxi}{ {\boldsymbol \xi} }
+\newcommand{\boldtau}{ {\boldsymbol \tau} }
+\newcommand{\boldepsilon}{ {\boldsymbol \epsilon} }
+\newcommand{\boldmu}{ {\boldsymbol \mu} }
+\newcommand{\boldSigma}{ {\boldsymbol \Sigma} }
+\newcommand{\boldOmega}{ {\boldsymbol \Omega} }
+\newcommand{\boldPhi}{ {\boldsymbol \Phi} }
+\newcommand{\boldLambda}{ {\boldsymbol \Lambda} }
+\newcommand{\boldphi}{ {\boldsymbol \phi} }
+
+\newcommand{\Sigmax}{ {\boldsymbol \Sigma_{\boldx}}}
+\newcommand{\Sigmau}{ {\boldsymbol \Sigma_{\boldu}}}
+\newcommand{\Sigmaxinv}{ {\boldsymbol \Sigma_{\boldx}^{-1}}}
+\newcommand{\Sigmav}{ {\boldsymbol \Sigma_{\boldv \boldv}}}
+
+\newcommand{\hboldx}{ \hat {\mathbf x} }
+\newcommand{\hboldy}{ \hat {\mathbf y} }
+\newcommand{\hboldb}{ \hat {\mathbf b} }
+\newcommand{\hboldu}{ \hat {\mathbf u} }
+\newcommand{\hboldtheta}{ \hat {\boldsymbol \theta} }
+\newcommand{\hboldtau}{ \hat {\boldsymbol \tau} }
+\newcommand{\hboldmu}{ \hat {\boldsymbol \mu} }
+\newcommand{\hboldbeta}{ \hat {\boldsymbol \beta} }
+\newcommand{\hboldgamma}{ \hat {\boldsymbol \gamma} }
+\newcommand{\hboldSigma}{ \hat {\boldsymbol \Sigma} }
+
+\newcommand{\boldA}{\mathbf A}
+\newcommand{\boldB}{\mathbf B}
+\newcommand{\boldC}{\mathbf C}
+\newcommand{\boldD}{\mathbf D}
+\newcommand{\boldI}{\mathbf I}
+\newcommand{\boldL}{\mathbf L}
+\newcommand{\boldM}{\mathbf M}
+\newcommand{\boldP}{\mathbf P}
+\newcommand{\boldQ}{\mathbf Q}
+\newcommand{\boldR}{\mathbf R}
+\newcommand{\boldX}{\mathbf X}
+\newcommand{\boldU}{\mathbf U}
+\newcommand{\boldV}{\mathbf V}
+\newcommand{\boldW}{\mathbf W}
+\newcommand{\boldY}{\mathbf Y}
+\newcommand{\boldZ}{\mathbf Z}
+
+\newcommand{\bSigmaX}{ {\boldsymbol \Sigma_{\hboldbeta}} }
+\newcommand{\hbSigmaX}{ \mathbf{\hat \Sigma_{\hboldbeta}} }
+
+\newcommand{\RR}{\mathbbm R}
+\newcommand{\CC}{\mathbbm C}
+\newcommand{\NN}{\mathbbm N}
+\newcommand{\PP}{\mathbbm P}
+\newcommand{\EE}{\mathbbm E \nobreak\hspace{.1em}}
+\newcommand{\EEP}{\mathbbm E_P \nobreak\hspace{.1em}}
+\newcommand{\ZZ}{\mathbbm Z}
+\newcommand{\QQ}{\mathbbm Q}
+
+
+\newcommand{\XX}{\mathcal X}
+
+\newcommand{\aA}{\mathcal A}
+\newcommand{\fF}{\mathscr F}
+\newcommand{\bB}{\mathscr B}
+\newcommand{\iI}{\mathscr I}
+\newcommand{\rR}{\mathscr R}
+\newcommand{\dD}{\mathcal D}
+\newcommand{\lL}{\mathcal L}
+\newcommand{\llL}{\mathcal{H}_{\ell}}
+\newcommand{\gG}{\mathcal G}
+\newcommand{\hH}{\mathcal H}
+\newcommand{\nN}{\textrm{\sc n}}
+\newcommand{\lN}{\textrm{\sc ln}}
+\newcommand{\pP}{\mathscr P}
+\newcommand{\qQ}{\mathscr Q}
+\newcommand{\xX}{\mathcal X}
+
+\newcommand{\ddD}{\mathscr D}
+
+
+\newcommand{\R}{{\texttt R}}
+\newcommand{\risk}{\mathcal R}
+\newcommand{\Remp}{R_{{\rm emp}}}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ess}{ \textrm{{\sc ess}} }
+\newcommand{\tss}{ \textrm{{\sc tss}} }
+\newcommand{\rss}{ \textrm{{\sc rss}} }
+\newcommand{\rssr}{ \textrm{{\sc rssr}} }
+\newcommand{\ussr}{ \textrm{{\sc ussr}} }
+\newcommand{\zdata}{\mathbf{z}_{\mathcal D}}
+\newcommand{\Pdata}{P_{\mathcal D}}
+\newcommand{\Pdatatheta}{P^{\mathcal D}_{\theta}}
+\newcommand{\Zdata}{Z_{\mathcal D}}
+
+
+\newcommand{\e}[1]{\mathbbm{E}[{#1}]}
+\newcommand{\p}[1]{\mathbbm{P}({#1})}
+
+%\theoremstyle{plain}
+%\newtheorem{axiom}{Axiom}[section]
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{corollary}{Corollary}[section]
+%\newtheorem{lemma}{Lemma}[section]
+%\newtheorem{proposition}{Proposition}[section]
+%
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}[section]
+%\newtheorem{example}{Example}[section]
+%\newtheorem{remark}{Remark}[section]
+%\newtheorem{notation}{Notation}[section]
+%\newtheorem{assumption}{Assumption}[section]
+%\newtheorem{condition}{Condition}[section]
+%\newtheorem{exercise}{Ex.}[section]
+%\newtheorem{fact}{Fact}[section]
+
+
+\usepackage[T1]{fontenc}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{assumption}{Assumption}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{observation}{Observation}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+%\input{tcilatex}
+
+\makeatletter
+\def\title@font{\Large\bfseries}
+\let\ltx@maketitle\@maketitle
+\def\@maketitle{\bgroup%
+	\let\ltx@title\@title%
+	\def\@title{\resizebox{\textwidth}{!}{%
+			\mbox{\title@font\ltx@title}%
+	}}%
+	\ltx@maketitle%
+	\egroup}
+\makeatother
+\usepackage{setspace}
+\usepackage{amsmath}
+\onehalfspacing
+\newenvironment{p_enumerate}{
+	\begin{enumerate}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+	}{\end{enumerate}}
+\sectionfont{\centering\mdseries\scshape\bfseries}
+\subsectionfont{\raggedright\mdseries\scshape\bfseries}
+\subsubsectionfont{\flushleft\mdseries\itshape\bfseries}
+\makeatletter
+\def\@seccntformat#1{\csname the#1\endcsname.\quad}
+\makeatother
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+		\hbox{}\nobreak\hfil(#1)%
+		\parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+{\savebox\mybox{#1}\begin{quote}}
+	{\signed{\usebox\mybox}\end{quote}}
+
+\pdfminorversion=4
+
+\makeatletter
+\newcommand{\changeoperator}[1]{%
+	\csletcs{#1@saved}{#1@}%
+	\csdef{#1@}{\changed@operator{#1}}%
+}
+\newcommand{\changed@operator}[1]{%
+	\mathop{%
+		\mathchoice{\textstyle\csuse{#1@saved}}
+		{\csuse{#1@saved}}
+		{\csuse{#1@saved}}
+		{\csuse{#1@saved}}%
+	}%
+}
+\makeatother
+
+\changeoperator{sum}
+\changeoperator{
+	prod}
+
+\begin{document}
+	
+	
+	
+	
+	
+	
+	\vspace{-0.5ex}
+	
+	
+	
+	
+	
+	
+	
+	
+	\newpage{}
+	
+	
+	
+	
+	
+	
+	\title{{Expectation Shocks and Business Cycles
+			}}
+			
+			
+			
+			%\date{This version: February, 2016\\
+				%{First version: December, 2015}}
+			\date{This version: December 2022}%\\This version: February, 2017}
+		
+		
+		\author{Sonan Memon\footnote{Research Fellow, PIDE, Islamabad. \texttt{smemon@pide.org.pk}}}
+		
+		
+		
+		\newpage{}
+		
+		\maketitle
+		\vspace{-2ex}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		\begin{center}
+			\line(1,0){470}
+		\end{center}
+		\begin{spacing}{1.1}
+			\vspace{-3ex}
+			\begin{abstract}
+				\noindent 
+				I study a smorgasbord of different expectation shocks in two kinds of macroeconomic models. As a baseline, I use a simple, aggregate demand and supply framework with adaptive expectations. I present impulse response results for exogenous, temporary expectation shocks lasting for one period only \textit{or} 4 periods, expectation shock with output gap centered Taylor rule as opposed to inflation targeting and a permanent exogenous shocks (long run shock) to expectations. Later, I extend my results by using a New Keynesian model, allowing for a richer analysis. In the New Keynesian setting, I study the impact of anticipated and unanticipated preference shocks with backward-looking and forward-looking expectations.
+				
+				My results indicate the centrality of expectation formation process in driving the shock reactions and propagation\footnote{The replication code of this paper with R, Julia and Dynare code is available on my GitHub page: {\color{blue}{https://github.com/sonanmemon}}}. Policy makers in Pakistan should design policies which maneuver market sentiments more effectively through press releases and frequent information sharing with the market, with the aim of making business cycle fluctuations more docile.
+			\end{abstract}
+		\end{spacing}
+		\textbf{Keywords:} Sentiment Driven Business Cycles in Pakistan. Smorgasbord of Inflation Expectation Shocks. Temporary versus Permanent Expectation Shocks. Monetary Policy and Inflation Expectations. AD and AS Model. Expectation Shocks in New Keynesian Models. Welfare Effects of Macroeconomic Shocks.  {}\\
+		\textbf{JEL Classification}: E00, E12, E30, E32, E40, E50, E52, E70, E71, D84.
+		%\textbf{JEL Classifications:}
+		\\
+		\begin{center}
+			\vspace{-8ex}
+			\line(1,0){470}
+		\end{center}
+		\pagenumbering{arabic}
+		\baselineskip=18pt 
+		
+		\newpage{}
+		
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[width=0.4\linewidth]{pidelogo.jpg}		
+				\caption*{}
+			\end{center}
+		\end{figure}
+		
+		\vspace{-8ex}
+		
+		
+		
+		\tableofcontents
+		
+		\newpage{}
+		
+		\vspace{-8ex}
+		
+		
+		
+		
+		\section{Motivation}
+	
+		
+	
+		
+		There is a large and growing literature in macroeconomics which attributes business cycle fluctuations to expectations, especially in light of the Great Recession, which did not seem to be driven by extremely unfavorable fundamentals. Many economists now recognize an enlarged role for beliefs in the narrative of business cycles (see for example \cite{veldkamp2019tail}, \cite{gennaioli2020crisis}). Classic studies such as those of \cite{minsky1977financial}, \cite{kindleberger1978manias} and more recently \cite{reinhart2009time} argue that the failure of investors to accurately assess risks is a common thread of many of these episodes. \cite{rajan2006has} and \cite{taleb2007black} stressed the dangers from low probability risks to financial stability due to subprime mortgages.
+		
+		 For instance, in October 2017, the University of Chicago surveyed
+		 a panel of leading economists in the United States and Europe on the importance
+		 of various factors contributing to the 2008 Global Financial
+		 Crisis. The number one contributing factor among the panelists was the
+		 ``flawed financial sector'' in terms of regulation and supervision. But the
+		 number- two factor among the twelve considered, ranking just below
+		 the first in estimated importance, was underestimation of risks from
+		 financial engineering. The experts seem to agree that the fragility of a
+		 highly leveraged financial system exposed to major housing risk was
+		 not fully appreciated in the period leading to the crisis. Many economists increasingly recognize that the Lehman bankruptcy and the fire sales during 2008 revealed that investors and policymakers learned that the financial system was more fragile and interdependent than they previously thought \cite{gennaioli2020crisis}.
+		 
+		 
+		 If the output over-expansion is fueled by excessive credit growth, as suggested by recent historical evidence \cite{schularick2012credit}, \cite{mian2017household}\footnote{\cite{mian2017household} provide global and historical evidence that rising household debt predicts recessions and intensity of recessions is related to prior debt expansion in household sector.}, then eventual recognition of tail risks and overheating in financial markets paves the way for a \textit{Minsky Moment} \cite{minsky1977financial}. For instance, \cite{bordalo2018diagnostic} build a micro-founded and behavioral model of expectations called \textit{diagnostic expectations} and credit cycles in which beliefs overreact to incoming news because of the representative heuristic. This creates excessive optimism when credit spreads are low, during booms and also exaggeration of subsequent reversal when good news inflow slows down, leading to endogenous cycles in absence of change in fundamentals, engendering a recession endogenously.
+		 
+		 
+		 Much of this work indicates that there are errors in expectations over the course of the business cycle. This has led to the trend of data collection by various central banks in the world such as the Federal Reserve in USA and even the State Bank of Pakistan, on expectations through survey data. Increasingly, such data is considered a valid and extremely useful source of information for economic research. We have learned that expectations in financial markets tend to be extrapolative rather than rational and this basic feature needs to be integrated into economic analysis.
+		 
+		 
+		 
+		
+		
+		
+		
+		In this work, my focus is on \textit{modeling expectation shocks} in a simple aggregate demand and supply model with adaptive expectations as a baseline, followed by an extension into a New Keynesian model with a combination of forward looking and adaptive expectations. I study a variety of expectation shocks such as temporary shocks, lasting for one period versus those which lost for four periods, permanent shocks and a series of repeated temporary shocks. In doing so, I analyze the responses of inflation, output, nominal and real interest rates in reaction to various expectation shocks. Lastly, I use some stylized data from Pakistan and analyze the impulse responses of key macroeconomic variables to such expectation shocks, in a developing economy with lower levels of financial access and high poverty.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		\section{Stylized Facts} 
+		
+		
+		
+		 There is a structure, pattern, regularity and relative coherence in the manner in which consumer expectations evolve over the business cycle, especially when one examines cross-sectional heterogeneity. Certain demographic groups have consistently more pessimistic and inaccurate expectations such as women, ethnic minorities, lower socioeconomic groups and young people (see for instance \cite{madeira2015heterogeneous, curtin19}). There is also an average pessimism bias across all demographic groups because of asymmetric recall of negative news in the elicited expectations, relative to estimates of rational expectations \cite{curtin19}, \cite{bhandari2019survey}. The volatility of consumer sentiment over the business cycle also varies across groups with higher socio-economic groups showing more volatility \cite{curtin19}. Meanwhile, the time series co-movements across demographic groups are very high. 
+		 
+		 Moreover, the literature has established that consumer sentiment indices regularly predict recessions, though not by a long horizon. In fact, the forward looking, informative and leading indicator nature of consumer sentiment data is precisely the reason why the University of Michigan survey and similar surveys have become globally popular among central banks and policy makers. This evidence suggests that while ``autonomous'' components of consumer sentiment such as those driven by instruments are needed for econometric identification of plausibly exogenous variation, there is also an important \textit{systematic} and \textit{endogenous} component to these sentiments which is responding to, predicting and causing significant developments in the real economy. For instance, the sentiments can influence search intensity in labor markets, consumer durable goods purchases and so on. In fact, there is evidence that household expectations are predictive of economic and financial behavior \cite{armantier2015inflation, armona2018home} and high volatility in consumer durable goods purchases over the business cycle has been often attributed in the literature to consumer sentiment fluctuations (see for instance \cite{katona1960powerful, mishkin1978consumer}).
+		 
+		 
+		 \subsection{Data From Pakistan}
+		
+		
+	
+		
+		
+		The SBP conducts various surveys, including Consumer Confidence Survey (CCS) and Business Confidence Survey (BCS) after every two months. CCS is the telephonic survey of households that are selected randomly across the country, and provides the information on ``what people are thinking'' about the economy.  BCS is the telephonic survey of firms and provides the information on what firms are thinking about the business conditions in the country. 
+		
+		%The State Bank also undertakes the Bank Lending Survey (BLS) and Systemic Risk Survey (SRS). BLS is an online web based survey of lenders to obtain current and expected credit conditions and the major factors affecting those conditions. SRS is a email based survey of market participants and experts about various existing and emerging/potential risks and their confidence in the stability of the financial system. 
+		
+		In the graphs presented next, I use data from State Bank of Pakistan (SBP) on consumer confidence in Pakistan during 2012 to 2022.  Firstly, in Figure 1, I plot the evolution of three consumer confidence indices for Pakistan, at a bi-monthly (i.e six times in one year or once every two months) frequency from January 2012 to September 2022. It is evident that all three indices: overall consumer confidence index (CCI), current economic conditions index (CEC) and expected economic conditions index (EEC) co-move with each other. However, since 2018 some variation is noticeable, with expected economic conditions being the most optimistic, perception of current economic conditions being at the lowest level of optimism and consumer confidence index lying somewhere in the middle. The data also reveals that the recent inflation crisis in Pakistan led to a sharp reduction in consumer confidence in early 2022, which has only mildly recovered by September 2022.
+	
+		
+		\begin{figure}[H]
+			\centering
+			\scalebox{0.8}{\input{CC_Pakistan.tex}}
+			\caption[]{Bi-Monthly Consumer Confidence Indices (2012-2022)}
+		\end{figure}
+	
+		
+	
+	Meanwhile in Figure 2, I have plotted the bi-monthly inflation expectations index which includes categories such as energy products, food and non-food inflation and lastly daily use items. It is evident that when consumer confidence and expectations regarding economic conditions were becoming more optimistic over time during 2012 to 2018, six month ahead inflation expectations were also falling. During 2018 to 2021, when consumer confidence fell, it was coterminous with a rise is short run, inflation expectations. Across various items, the inflation expectations were fairly similar but they rose dramatically for daily use items during 2016 to 2018 relative to the other categories. Whereas, energy items tend to be associated with lower average, inflation expectations relative to all other items, especially daily use products and these expectations are highly volatile, especially driven by frequent bouts of dramatically lower inflation expectations relative to other groups.
+
+		
+		
+		
+		
+		
+		\begin{figure}[H]
+			\centering
+			\scalebox{0.8}{\input{InflationExpectations.tex}}
+			\caption[]{Bi-Monthly Inflation Expectations (2012-2021)}
+		\end{figure}
+	
+	
+	In Figure 3, I provide evidence on cross-correlations between quarterly expected economic conditions index for \textit{consumers} and quarterly GDP data for Pakistan during 2012 to 2021, based on SBP's (State Bank of Pakistan) data i.e $Corr(EEC_{x-t}, GDP_{x})$, where $t \in (-10,10)$. The results below, along with 95\% confidence intervals reveal that while increase in past levels of expected economic conditions are positively and significantly correlated with future real GDP growth rates at various horizons, especially 5 or less quarters. Meanwhile, changes in current real GDP growth are not significantly correlated with future expected economic conditions\footnote{In the appendix, I also present graphs which help visualize the leading role of expected economic conditions, relative to real GDP growth.}.
+		
+		
+	\begin{figure}[H]
+		\centering
+		\scalebox{0.8}{\input{CCF_EEC_GDP2018.tex}}
+		\caption[]{Cross-Correlation Function for Expected Economic Conditions and GDP}
+	\end{figure}
+
+
+The SBP Pakistan has also measured \textit{business} confidence index since the end of 2017\footnote{This data is based on business sector surveys from November 2017 to September 2022 conducted by the State Bank of Pakistan.}. In Figure 4 below, I present the cross-correlations between expected economic conditions (EEC) index which is a measure of business confidence and quarterly real GDP growth for Pakistan. The data reveals that stimulation of business confidence in three, four and five quarters ahead is followed by higher real GDP growth rate in future quarters. Meanwhile, a higher real GDP growth is also followed by recovery in business confidence, which is statistically significant only 4 quarters after real GDP growth increases. On the whole, business confidence is a leading indicator and drives future real GDP growth rates much more than the converse channel.
+
+
+
+\begin{figure}[H]
+	\centering
+	\scalebox{0.8}{\input{BCI_GrowthGDP.tex}}
+	\caption[]{Bi-Monthly Business Confidence Indices and Real GDP (2017-2022)}
+\end{figure}
+
+
+Consumer confidence levels regarding durable goods such as automobiles and housing are visualized in Figure 5. It is evident that consumer confidence for multiple durable good categories co-move closely with each other and also with the overall consumer sentiment indices analyzed above.
+
+	\begin{figure}[H]
+	\centering
+	\scalebox{0.8}{\input{CC_Durables.tex}}
+	\caption[]{Bi-Monthly Consumer Confidence For Durable Goods (2012-2022)}
+\end{figure}
+
+
+Thus, the stylized facts from empirical evidence in Pakistan reveals that there is a considerable degree of co-movement among economic expectations for various product types and across individual characteristics. Moreover, data on business confidence level and consumer expectations is an essential barometer to both assess current economic climate and forecast future economic crisis such as business cycle fluctuations. This is consistent with the evidence from advanced economies and other developing economies. 
+
+
+		
+		
+		\section{Aggregate Demand and Aggregate Supply Model}
+		
+		 I begin with a simple, backward looking, aggregate demand and supply model as in \cite{abel2017macroeconomics} with a standard demand equation, a Fisher equation representing the relationship between real and nominal interest rates, a Philip's curve, adaptive expectations and a monetary policy rule or Taylor rule. 
+		 
+		 The expectation formation process is adaptive, which implies that the expectation of inflation is merely extrapolated from the past inflation in addition to an error term, which will be the source of shocks. This is an assumption which is questionable to say the least but it allows for a simplified and stylized model to understand the fundamental consequences of a shock to expectations.
+		
+		\subsection{Building Blocks}
+		
+		The \textit{output equation} or demand for goods and services is represented by equation 1 below. When lending money or credit for investment becomes expensive due to a higher real interest rate relative to $\rho$ (natural rate of interest), the productive capacity falls since $\alpha > 0$. $\epsilon_{t}$ represents a exogenous demand shock and the magnitude of $\alpha$ captures the elasticity of output to a deviation of real interest rates from $\rho$.
+		
+		\begin{equation}
+			Y_{t} = \bar{Y} - \alpha (r_{t} - \rho) + \epsilon_{t}, \; \alpha > 0
+		\end{equation}
+	
+	
+	The classic \textit{fisher equation} is displayed in equation 2 below. This equation captures the idea that the expected real rate of return on investment must be lower than the nominal interest rates when there is a positive expected rate of inflation in future. In other words investors understand that real returns are not the same as nominal returns when there is a non-zero level of inflation which depreciates the real value of same monetary units of money in terms of purchasing power.
+
+	
+	
+	 
+	\begin{equation}
+		r_{t} = i_{t} - \mathbb{E}_{t}\{\pi_{t+1}\}
+	\end{equation}
+		
+		The celebrated and often vociferously debated ``Philip's Curve'' is presented in equation 3 below. This is what we call an expectations augmented Philip's curve since it assigns a role to expected past inflation in determining future inflation. Moreover, inflation depends positively on the deviation of output from it steady state and this is what creates a trade-off between inflation and output. In other words the cost of growing beyond steady state in short run or reducing unemployment below the ``natural level'' is higher inflation level.
+		
+		
+		
+		\begin{equation}
+			\pi_{t} = i_{t} - \mathbb{E}_{t-1}\{\pi_{t}\} + \phi(Y_{t} - \bar{Y}) + v_{t}, \; \phi > 0
+		\end{equation}
+		
+		Equation 4 below captures the assumption regarding the expectation formation process. In other words, expected inflation is equal to past inflation and an additional $\eta_{t}$ term which captures a shock to expectations. Such an expectation formation process is clearly not robust to the Lucas critique since a change in policy or macroeconomic environment is not accounted for in the expectation formation. However, this backward looking model allows me to initialize a basic analysis due to its convenience; I will later relax this assumption in the New Keynesian setting.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		\begin{equation}
+			\mathbb{E}_{t}\{\pi_{t+1}\} = \pi_{t} + \eta_{t}, \; \forall t
+		\end{equation}
+	
+	Lastly, equation 5 captures the monetary policy rule in line with the concept of a Taylor rule. The baseline level of nominal interest rate in steady state and with zero inflation level is $\rho$. Any deviation of inflation or output relative to their ``natural'' steady states of $\pi^{*}$ and $\bar{Y}$ should be penalized in the form of higher nominal rates which reduces inflation and output levels by increasing the cost of overheating the economy. The degree of inflation versus output preference is captured by the $\theta_{\pi}$ and $\theta_{Y}$ parameters. 
+	
+	
+	\begin{equation}
+		i_{t} = \pi_{t} + \rho + \theta_{\pi} (\pi_{t} - \pi^{*}) + \theta_{Y} (Y_{t} - \bar{Y}), \; \theta_{\pi}, \theta_{Y} > 0
+	\end{equation}
+
+
+%\begin{equation*}
+%	\begin{split}
+%	Y_{t} = \bar{Y} - \alpha (r_{t} - \rho) + \epsilon_{t}, \; \alpha > 0 \\
+%	r_{t} = i_{t} - \mathbb{E}_{t}\{\pi_{t+1}\} \\
+%	\pi_{t} = i_{t} - \mathbb{E}_{t-1}\{\pi_{t}\} + \phi(Y_{t} - \bar{Y}) + v_{t}, \; \phi > 0 \\
+%	\mathbb{E}_{t}\{\pi_{t+1}\} = \pi_{t}, \; \forall t \\
+%	i_{t} = \pi_{t} + \rho + \theta_{\pi} (\pi_{t} - \pi^{*}) + \theta_{Y} (Y_{t} - \bar{Y}), \; \theta_{\pi}, \theta_{Y} > 0
+%	\end{split}
+%\end{equation*}
+
+
+
+
+
+
+
+
+
+
+	
+		\subsection{Long Run Equilibrium}
+		
+		The long run equilibrium, which is equivalent to the steady state in this simple model satisfies the following conditions. After responding to a temporary shock, all variables would eventually converge back to this original steady state. In other words, deviations from original steady state would be temporary since this is a \textit{locally stable} equilibrium. However in the case of a permanent change in steady state, there is a long run shift in economic equilibrium in response to a shock to expectations.
+		
+		For instance, the steady state level of output is $\bar{Y}$ and steady state level of nominal interest rate is tied to the natural level of real interest rate i.e $\rho$ and inflation i.e $\pi^{*}$.
+		
+		
+		\begin{equation*}
+			\begin{split}
+			Y_{t} = \bar{Y} \\
+			r_{t} = \rho \\
+			\pi_{t} = \pi^{*} \\
+			\mathbb{E}_{t}\{\pi_{t+1}\} = \pi^{*} \\
+			i_{t} = \rho + \pi^{*}
+			\end{split}
+		\end{equation*}
+	
+	\subsection{Parametrization}
+	
+	The steady state output i.e $\bar{Y} = 50$, steady state inflation i.e $\pi^{*} = 2$ or 2\%, the baseline responsiveness to inflation $\phi_{\pi} = 1$ in the taylor rule and responsiveness to output is $\phi_{Y} = 0.3$. The natural rate of interest i.e $\rho = 2\%$ and the responsiveness of demand to $r_{t}$ (real interest rates) is measured by $\alpha$ which is set equal to $1$. This is a standard run-of-the mill parametrization which allows one to compare the results with other standard shocks and maintain emphasis on the impact of expectation shock alone.
+	
+	
+	\begin{center}
+		\Taccount{Model Parameters}{$\bar{Y} = 50$&$\pi^{*} = 2$\\$\rho = 2$&$\alpha=1$\\$\theta_{\pi} = 1$&$\theta_{Y} = 0.3$\\$\phi = 0.6$}
+	\end{center}
+		
+		\subsection{Dynamic AS and Dynamic AD Equations}
+		
+		In this section, I derive the two central equations of this aggregate demand and supply model i.e the dynamic AD and dynamic AS equations. 
+		
+		The dynamic AS curve is displayed in equation 6 below. Justification for equation 6 can be found in any standard textbook on macroeconomics such as \cite{abel2017macroeconomics}.
+		
+			\begin{equation}
+			\pi_{t} = \pi_{t-1} + \eta_{t-1} + \phi (Y_{t} - \bar{Y}) + v_{t}
+		\end{equation}
+	
+	Meanwhile, the dynamic AD curve is displayed in equation 7 below:
+		\begin{equation}
+		Y_{t} = \bar{Y} - \frac{\alpha \theta_{\pi}}{1 + \alpha \theta_{Y}}(\pi_{t} - \pi^{*}) + \frac{1}{1 + \alpha \theta_{Y}} \epsilon_{t} + \frac{\alpha}{1 + \alpha \theta_{Y}} \eta_{t}
+	\end{equation}
+
+In equilibrium, aggregate demand equals aggregate supply, which implies that:
+\begin{equation*}
+\pi_{t} = \pi_{t-1} + \eta_{t-1} + \phi\bigg(\bar{Y} - \frac{\alpha \theta_{\pi}}{1 + \alpha \theta_{Y}}(\pi_{t} - \pi^{*}) + \frac{1}{1 + \alpha \theta_{Y}} \epsilon_{t} + \frac{\alpha}{1 + \alpha \theta_{Y}} \eta_{t} - \bar{Y}\bigg) + v_{t}
+\end{equation*}
+
+Some further simplification yields:
+
+\begin{equation*}
+	\pi_{t}\bigg(1 +  \frac{\phi \times \alpha \times \theta_{\pi}}{1 + \alpha \theta_{Y}}\bigg)  = \pi_{t-1} + \eta_{t-1} + \phi\bigg(\frac{\alpha \theta_{\pi}}{1 + \alpha \theta_{Y}} \times \pi^{*} + \frac{1}{1 + \alpha \theta_{Y}} \epsilon_{t} + \frac{\alpha}{1 + \alpha \theta_{Y}} \eta_{t} \bigg) + v_{t}
+\end{equation*}
+
+Using some further notation for the purposes of simplification and assuming that $v_{t} = 0$ (assuming no supply shocks), I derive the following equations ($8$ and $9$) for inflation and output in equilibrium. These equations can be solved for equilibrium levels of $\pi_{t}$ and $Y_{t}$ in any period, given the shocks, exogenous parameters (defined in last section) and past values\footnote{This is a backward looking model.} of $\pi_{t-1}$ and $\eta_{t-1}$. Thus, one can compute the impulse responses for any forward horizon, given any initial shock to either $\eta_{t}$ (expectation shock) or $\epsilon_{t}$ (demand shock). 
+
+For instance, let's assume that we were in the state of long run equilibrium (i.e $\pi_{t-1} = \pi^{*} = 2\%$, $\bar{Y} = 50$, $i^{*} = 4\%$ and $r^{*} = 2\%$) before a positive, exogenous and one period (temporary) expectation shock i.e $\eta_{t} = 1$ hits the economy during period 1. In this case, one can compute the impulse responses for inflation and output (using 8 and 9), before computing them for nominal and real interest rates (using equations 10 and 11 after we have solved for $\pi_{t}$ and $Y_{t}$). Figure 6 of next section depicts the impulse responses for such a shock. 
+
+
+
+\begin{equation}
+	\pi_{t}  = \frac{\pi_{t-1} + \eta_{t-1} + \gamma \times \pi^{*} + \theta \times \epsilon_{t} +  \beta \eta_{t}}{\zeta}
+\end{equation}
+
+\begin{equation}
+	Y_{t}  = \bar{Y} - \frac{\gamma}{\phi} \bigg(\pi_{t} - \pi^{*}\bigg) + \frac{\theta}{\phi} \epsilon_{t} + \frac{\beta}{\phi} \eta_{t}
+\end{equation}
+
+
+	
+
+\begin{equation}
+	i_{t} = \pi_{t} + \rho + \theta_{\pi} (\pi_{t} - \pi^{*}) + \theta_{Y} (Y_{t} - \bar{Y}), \; \theta_{\pi}, \theta_{Y} > 0
+\end{equation}
+
+\begin{equation}
+	r_{t} = i_{t} - (\pi_{t} + \eta_{t})
+\end{equation}
+
+Note that $\zeta = \bigg(1 +  \frac{\phi \times \alpha \times \theta_{\pi}}{1 + \alpha \theta_{Y}}\bigg)$, $\gamma = \bigg(\frac{\alpha \times \phi \times \theta_{\pi}}{1 + \alpha \theta_{Y}}\bigg)$, $\theta = \bigg(\frac{\phi}{1 + \alpha \theta_{Y}}\bigg)$, $\beta = \bigg(\frac{\phi \times \alpha}{1 + \alpha \theta_{Y}}\bigg)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\Taccount{Expenses}{Debits&Credits\\Increase&Decrease\\Normal Balance}\quad
+%\Taccount{Owner's Drawing}{Debits&Credits\\Increase&Decrease\\Normal Balance}
+%\bigskip
+%\Taccount{Liabilities}{Debits&Credits\\Decrease&Increase\\&Normal Balance}\quad
+%\Taccount{Revenues}{Debits&Credits\\Decrease&Increase\\&Normal Balance}\quad
+%\Taccount{Owner's Capital}{Debits&Credits\\Decrease&Increase\\&Normal Balance}
+	
+		
+		
+	
+		
+		\subsection{Impulse Responses}
+		
+		
+		
+		
+		
+	All of the graphs in this section show responses to expectation shocks i.e various type of shocks to $\eta_{t}$.
+	
+	In Figure 6, I present the responses of a system, perturbed by a one period, temporary shock to expectations and observe the response of inflation, output, real and nominal interest rates. It is evident that this optimistic sentimental shock boosts the level of inflation in the economy and output levels relative to initial steady state in the first period. During the second period, output actually falls below the steady state before converging to the initial steady state after 13 periods. Meanwhile, inflation continues to be higher than steady state in the 2nd period i.e above 2.8\% level and ultimately converges back to initial steady state of 2\% after around 14 periods.
+		
+		
+		
+		
+		
+		
+		\begin{figure}[H]
+				\includegraphics[width=0.5\linewidth]{inflation_expectationshock.pdf}
+				\hfill
+				\includegraphics[width=0.5\linewidth]{output_expectationshock.pdf}
+				\hfill
+				\begin{Center}
+				\includegraphics[width=0.5\linewidth]{interestrates_expectationshock.pdf}
+				\end{Center}
+				\caption{Impulse Responses For 1 Period Shock}
+		\end{figure}
+	
+	Meanwhile, in response to a 4 period shock to expectations, we observe the following impulse responses. Inflation continues to rises for a longer time period after initial shock in this case which is intuitive given the persistence of both the shock and adaptive expectations for inflation. Hence, we have to tolerate an excessive inflation of above 4\% before it starts to revert toward previous steady state, 5 periods after the shock. Output fluctuations are similar to the last case but the downward trend of output is more persistent and has a more pernicious effect by decreasing output levels by a stronger magnitude relative to the last scenario. While responding to this persistent shock, monetary policy makers have to pursue a contraction in monetary policy for a longer period of time before they can allow nominal interest rates to converge back to the initial steady state of 4\%.
+	
+	
+	
+	
+	
+	
+	 
+		
+		
+			\begin{figure}[H]
+			\includegraphics[width=0.5\linewidth]{inflation_expectationshock4period.pdf}
+			\hfill
+			\includegraphics[width=0.5\linewidth]{output_expectationshock4period.pdf}
+			\hfill
+			\begin{Center}
+				\includegraphics[width=0.5\linewidth]{interestrates_expectationshock4period.pdf}
+			\end{Center}
+			\caption{Impulse Responses For 4 Period Shock}
+		\end{figure}
+	
+	
+	If monetary policy makers are not conservative and respond more aggressively to any deviation of output from its steady state, we will observe more aggressive appreciation in nominal interest rates which lasts for longer periods in response to the same 4 period expectation shock. Figure 8 below considers the response of a 4 period expectation shock when there is an output preference. In this case, inflation rises above 6\% and slowly converges back to 2\% in approximately 40 periods after the initial shock. Meanwhile, output recovers to a level above 49.75 after 15 periods and slowly converges back to 50, approximately 45 periods after the shock.
+	
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.5\linewidth]{inflation_expectationshock4periodoutputpref.pdf}
+		\hfill
+		\includegraphics[width=0.5\linewidth]{output_expectationshock4periodoutputpref.pdf}
+		\hfill
+		\begin{Center}
+			\includegraphics[width=0.5\linewidth]{interestrates_expectationshock4periodoutputpref.pdf}
+		\end{Center}
+		\caption{Impulse Responses For 4 Period Shock and Output Preference}
+	\end{figure}
+
+
+	
+The following Figure 9 displays responses to a \textit{permanent} shock to expectations. In this case, inflation, output, nominal and real interest rates converge to a new long run or permanently different steady state.
+
+Inflation is permanently higher, output is permanently lower and both nominal and real interest rates converge to permanently higher rates. Thus, a permanent and optimistic shock to inflation expectations permanently increases actual inflation rates and permanently lowers aggregate output, leading to a permanent loss of social welfare. In this scenario one can conclude that a permanent and positive sentiment shock for inflation will make everyone worse off in the long run. Unless the degree of present bias is extremely high, one can confidently conclude that social welfare will be lower as a consequence of this permanent shock.
+
+
+
+	
+	\begin{figure}[H]
+		\includegraphics[width=0.5\linewidth]{inflation_expectationshock50period.pdf}
+		\hfill
+		\includegraphics[width=0.5\linewidth]{output_expectationshock50period.pdf}
+		\hfill
+		\begin{Center}
+			\includegraphics[width=0.5\linewidth]{interestrates_expectationshock50period.pdf}
+		\end{Center}
+		\caption{Impulse Responses For Permanent Shock}
+	\end{figure}
+
+
+In sum, a positive inflation expectation shock is self-fulfilling since it increases the inflation levels in the economy. Meanwhile, the impact of such a shock on output is positive in first period/first few periods and subsequently negative for many periods before the output level finally returns to its previous steady state. 
+
+
+If the expectation shock is permanent, it will almost always cause a long-term, negative effect on social welfare since inflation is permanently higher and output is permanently lower after merely one period of overheating. Even in the temporary shock scenario (Figures 6 to 8), the social welfare is permanently and irrevocably effected relative to the theoretical first best in which we do not observe any expectation shock. However, whether the welfare effects of temporary, expectation shocks are beneficial or deleterious is impossible to ascertain without further assumptions. For instance, it is theoretically possible that the output overheating in the first period or the first few periods has a positive effect on welfare for many people which is not compensated by the subsequent contraction since the long-run equilibrium is unchanged by a temporary shock. Hence, the welfare effects of temporary expectation shocks can only be measured if one imposes strong assumptions on the social welfare function and its relation to temporary fluctuations in output and inflation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+			
+		
+		\section{New Keynesian Model}
+		
+		
+		After building some intuition about the impact of an expectation shock on key macroeconomic variables, I now extend the model in a more realistic, New Keynesian setting as in \cite{gali2015book}.
+		
+		\subsection{Framework}
+		
+		I use a simple, stylized, three equation New Keynesian model as developed in chapter 3 of \cite{gali2015book}. The following three (12 to 14) equations represent the NKPC (New Keynesian Philip's Curve), output gap equation and the Taylor rule respectively.
+		
+	New Keynesian Philips curve is represented by equation 12 below. It captures the trade-off between inflation and output gap through the parameter $\kappa$ and also relates inflation to the expected inflation since this is a forward-looking model which assumes rational expectations.
+	
+	 
+	
+	\begin{equation}
+		\pi_{t} = \beta \mathbb{E}_{t}\{\pi_{t+1}\} + \kappa \: \widetilde{y}_{t}
+	\end{equation}
+
+The output gap equation is represented by equation 13 below which is also a forward-looking equation and captures the inverse relationship between output gap and real interest rates.
+
+	\begin{equation}
+	\widetilde{y_{t}} = -\frac{1}{\sigma} \big(i_{t} - \mathbb{E}_{t}\{\pi_{t+1}\} - r_{t}^{n}\big) + \mathbb{E}_{t}\{\widetilde{y_{t+1}}\}
+\end{equation}
+
+The third key equation is the interest rate rule (Taylor rule) which measures the reaction of interest rates to deviations in inflation and output relative to its steady state and the degree of conservatism of the central bank is captured by the parameters which measure the elasticity of response of interest rates to inflation and output deviations i.e $\phi_{\pi}$ and $\phi_{y}$.
+
+\begin{equation}
+	i_{t} = \rho + \phi_{\pi} \pi_{t} + \phi_{y} \widetilde{y_{t}} + v_{t} 
+\end{equation}
+
+
+The three equations stated above can be combined and represented as a system of difference equations which has the following representation:
+
+
+%\begin{tiny}
+	\begin{equation}
+		\begin{bmatrix}
+			\widetilde{y_{t}}  \\
+			\pi_{t} \\
+		\end{bmatrix} = {\bf{A}}_{T} \begin{bmatrix}
+		\mathbb{E}_{t}\{\widetilde{y_{t+1}}\}  \\
+		\mathbb{E}_{t}\{{\pi_{t+1}}\} \end{bmatrix} + {\bf{B}}_{T} u_{t} \\
+	\end{equation}
+%\end{tiny}
+
+
+%\begin{tiny}
+In the above system, ${\bf{A}}_{T}$, ${\bf{B}}_{T}$, $\Omega$ and $u_{t}$ are defined as follows:
+
+	\begin{equation*}
+		{\bf{A}}_{T} \equiv \Omega 
+		\begin{bmatrix}
+			\sigma & 1 - \beta \phi_{\pi}  \\
+			\sigma \times \kappa & \kappa + \beta (\sigma + \phi_{y}) \\
+		\end{bmatrix}, \:
+		{\bf{B}}_{T} \equiv \Omega \begin{bmatrix}
+			1 \\
+			\kappa \\
+		\end{bmatrix}, \: \Omega \equiv \frac{1}{\sigma + \phi_{y} + \kappa \phi_{\pi}}
+	\end{equation*}
+\begin{equation*}
+and \: u_{t} \equiv \psi_{ya}(\phi_{y} + \sigma (1 - \rho_{a}))a_{t} + (1 - \rho_{z})z_{t} - v_{t}
+\end{equation*}
+
+Note that the natural rate of interest $r_{t}^{n}$ can be defined as $r_{t}^{n} = \rho - \sigma (1 - \rho_{\alpha}) \psi_{ya} a_{t} + (1 - \rho_{z}) z_{t}$, where $z_{t}$ is the discount rate shock (shock to consumer utility or demand), $\alpha_{t}$ is the technology shock (supply shock or production shock) and $v_{t}$ is the monetary policy shock (i.e a deviation from the monetary policy rule). Moreover, $\psi_{ya} = \frac{1 + \varphi}{\sigma (1 - \alpha) + \varphi + \alpha}$ and $\widetilde{y_{t}} = y_{t} - y_{t}^{n}$, so that the output gap i.e $\widetilde{y_{t}}$ is the deviation of output from its natural rate $ y_{t}^{n}$. All the three exogenous shocks are represented as AR(1)\footnote{autoregressive processes of order 1.} processes i.e $z_{t} = \rho_{z} z_{t-1} + \epsilon_{t}^{z}$, $v_{t} = \rho_{v} v_{t-1} + \epsilon_{t}^{v}$ and $a_{t} = \rho_{a} a_{t-1} + \epsilon_{t}^{a}$. For a display of all key model equations, refer to the appendix section 7.1 below and for an even more detailed exposition on the baseline, New Keynesian model refer to \cite{gali2015book}\footnote{Chapter 3, Basic New Keynesian (henceforth NK) Model in \cite{gali2015book}.}, which also includes the conditions on parameters needed for a unique, local solution for this model\footnote{Assuming that $\phi_{\pi}$ and $\phi_{y}$ are non-negative coefficients, it has been shown by \cite{bullard2002learning} that the necessary and sufficient condition for a unique, local equilibrium is $\kappa (\phi_{\pi} - 1) + (1 - \beta) \phi_{y} > 0$}. 
+
+The baseline parametrization is displayed in the following table and is consistent with the literature and micro-data based evidence. The elasticity of intertemporal substitution is set to $\sigma = 1$ and discount factor is set equal to $0.99$, i.e $\beta = 0.99$.
+
+	\begin{center}
+	\Taccount{NK Model Parameters}{$\sigma = 1$&$\varphi = 5$\\$\phi_{\pi} = 0.5$&$\phi_{y}=0.125$\\$\theta = 0.75$&$\rho_{\nu} = 0.5$\\$\rho_{z} = 0.6$&$\eta=3.77$\\$\rho_{a} = 0.9$&$\beta=0.99$\\$\alpha=0.25$&$\epsilon=9$}
+\end{center}
+
+
+\subsection{Impulse Responses With Forward/Backward Looking Expectations}
+
+
+
+The following figures plot the dynamic responses of various variables to a \textit{temporary} and \textit{negative} shock to discount rates or discount factor shock i.e a negative shock to $\epsilon_{t}^{z}$ or a decrease in $z_{t}$\footnote{The plots were generated using Dynare and code was motivated by the code, produced by Dr. Johannes Pfeifer (see \textcolor{blue}{https://github.com/JohannesPfeifer}).}. This shock can be interpreted as causing a \textit{reduction} in the weight that households assign to current utility, relative to future utility. 
+
+In the following diagrams, ``ann'' refers to annualized, pi refers to inflation ($\pi$ in the above equations), $y_{gap}$ refers to output gap i.e $\widetilde{y_{t}}$ in the model above, $p$ refers to price levels, $i$ refers to nominal interest rates, $r$ refers to real interest rates, $m$ refers to money supply, $n$ refers to hours worked and $w$ refers to real wages.
+
+Figure 10 below plots the impulse responses to a temporary, negative discount rate shock with forward looking expectations. The impulses reveals that if we work with the baseline 3 equation New Keynesian model, a negative shock to discount rates makes the output gap negative, as the output deviates downwards from steady state and so do hours worked, real wages and output levels. Moreover, both the real and nominal interest rates at annualized levels fall in reaction to the shock. Meanwhile, the price level i.e $p$ depreciates and displays a persistent effect of the shock which lasts for several years, stabilizing at close to negative 20\% after 6 periods. Lastly, after an initial appreciation in nominal money supply, we observe negative growth rates in long-term for money supply, which is close to 20\%.
+
+
+In sum, with forward looking expectations, a negative discount rate shock leads to a recession in which both annualized inflation and output are decreasing. The monetary policy is expansionary in response to the shock but it cannot avoid a temporary decline in all key real economic variables such as real wages, hours worked, output, inflation and price levels.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=1\linewidth]{chap3_IRF_eps_z1.eps}
+		\end{center}
+		\caption{Dynamic Responses to Stochastic Discount Rate Shock with Forward Looking $\mathbb{E}$}
+	\end{figure}
+
+
+Meanwhile, Figure 11 plots the responses to a negative, discount rate shock with \textit{backward-looking, adaptive} expectations in an otherwise New Keynesian model. In this case, both the output and output gap display an initial downward trajectory, followed by a brief and mild expansion after 4 periods, which lasts for roughly 7 periods and slowly tapers off. Similar dynamics are displayed by hours worked $n$ and real wages i.e $w$. On the other hand, the price levels display a continuous and monotonic fall after the shock period. Meanwhile, the annualized inflation level slowly recovers toward the steady state after the initial downward shock. Both nominal and real interest rates depreciate in response to the shock, followed by a gradual recovery toward steady state but the nominal interest rates is more rigid in the recovery process after the initial contraction due to backward looking expectations. Lastly, nominal money supply appreciates in reaction to the discount rate shock, before displaying hump shaped persistence for some periods and finally (after 4 periods) begins its depreciation toward the de-growth process, slowing down by 40\% relative to steady state by the 14th period.
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\linewidth]{chap3_IRF_eps_z1-backwardlookingexp.eps}
+	\end{center}
+	\caption{Dynamic Responses to Stochastic Discount Rate Shock with Backward Looking $\mathbb{E}$}
+\end{figure}
+
+\subsection{Impulse Responses With Anticipated Shock}
+
+Figure 12 reports the impulse responses to a 8 period ahead, \textit{anticipated} and negative discount rate shock with forward looking expectations. 
+
+In this case, we actually observe an initial \textit{appreciation} in output, output gap, real wages and hours worked in response to the shock in the shock period. Subsequently, output and all other quantities fall below the steady state and reach previous steady state of zero after approximately 15 periods. Meanwhile, annualized inflation rate falls and so do the price levels in the impact period. After a significant deflation relative to the steady-state of around 50\%, annualized inflation recovers and converges back to initial steady-state, 15 periods after the shock.  
+
+The nominal money supply expands in the first period to accommodate the expansionary impulse of output before entering into a permanent depreciation after period 7. Lastly, both the nominal and real interest rates fall substantially and take approximately 20 periods to recover toward their initial steady state. 
+
+
+
+
+
+
+
+ 
+
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\linewidth]{chap3_IRF_tauzaniticipated8aheadshock-forwardlooking.eps}
+	\end{center}
+	\caption{Anticipated (8 Period Ahead) Discount Rate Shock with Forward Looking $\mathbb{E}$}
+\end{figure}
+
+
+
+Lastly, Figure 13 reports the impulse responses to a 8 period ahead, \textit{anticipated} and negative discount rate shock with \textit{backward-looking} expectations. 
+
+In this case, the shock is anticipated but expectations are backward looking and hence are lethargic in adjusting toward new levels. Both the output gap and inflation depreciate relative to their steady state values in the shock period and this continues to occur for some periods. After approximately 10 periods, output gap recovers and even appreciates relative to its steady state before ultimately converging back to its original steady state after 25 periods. The annualized inflation rate also recovers to its original steady state but this process is slower and less dynamic in comparison to output adjustment. The aggregate price level $p$ is unresponsive for a short period but enters into a long and persistent slump, 5 periods after the initial shock.
+
+Real wages and hours worked essentially mimic the adjustment pattern of output gap, demonstrating an initial negative response, before recovering from the avalanche and overshooting for a short period, ultimately deviating back to the original steady state.
+
+
+Both nominal and real interest rates fall for some periods due to expansionary monetary policy reaction, before recovering to previous steady state levels. Meanwhile, nominal money supply is lackluster in reacting to the shock for approximately 5 periods, before displaying a brief period of appreciation and ultimately entering into a persistent slump in growth rates.
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\linewidth]{chap3_IRF_tauzaniticipated8aheadshock-backwardlooking.eps}
+	\end{center}
+	\caption{Anticipated (8 Period Ahead) Discount Rate Shock with Backward Looking $\mathbb{E}$}
+\end{figure}
+
+
+In sum, the effect of same negative discount rate shock produces different dynamic responses for output, hours worked, real wages, annualized inflation rates, real/nominal interest rates and nominal money supply, depending on the expectation formation process (Figures 10 versus 11 and 12 versus 13) and whether the shock is anticipated or not (Figures 12 to 13 versus 10 to 11). 
+
+
+For instance, at a prima facie level it can be inferred that backward looking expectations lead to dynamics in Figure 11 which are more unstable relative to those of Figure 10 with forward looking expectations. This is because under both cases, the ultimate long-run steady state is the same but with backward looking expectations, inflation is persistently low for many periods before it recovers. Similarly, output fluctuations are more rapid and dynamic in Figure 11 relative to the forward looking expectations scenario in Figure 10.
+
+In the anticipated shock cases with forward looking expectations (Figure 12), unlike the previous cases, we observe an initial \textit{increas}e in output levels relative to steady state and subsequent reversal and ultimate convergence to initial steady state. Meanwhile, the response of inflation is similar to the response in Figure 10 but the level of persistence is higher relative to non-anticipated shock. 
+
+
+
+
+In the anticipated shock cases with backward looking expectations (Figure 13), unlike in Figure 12, we observe an initial \textit{decrease} in output levels relative to steady state, subsequent positive reversal and ultimate convergence to initial steady state, similar to the dynamics in Figure 11 (backward looking, unanticipated shock). Meanwhile, the response of inflation is similar to the response in Figure 12 but the level of persistence is even higher due to the role of backward looking expectations.
+
+In Table 1 below, I summarize the key directions of changes in annualized inflation $\pi$ and output gap $\widetilde{y}$ in response to the four shock types studied above. For instance, $FL/UA$ in the table represents the direction of changes in annualized inflation and output gap variables in response to a negative, temporary and unanticipated, discount rate shock with forward looking expectations. The initial, dynamic response is captured by the notation $t+j$, displayed as a subscript of any parameter's response to a shock which originates in period 1. For instance, $R(\pi_{t+j})$ refers to the response of inflation to the said shock, where $j \in [1,P]$. Whereas, $t+k$ represents the later time periods i.e $k > j$ and $k \in [P+1, Q]$, where $P$ is the maximum time period for which the direction of initial impulse has not \textit{strictly} changed relative to initial sign; $Q$ is the maximum time period after which the shock has finally and permanently converged back to original steady state. Both $P$ and $Q$ will clearly vary across variables\footnote{These two subsets are sufficient to represent all the signs of impulse responses since for the results considered in this paper, the impulses only change their signs from strictly positive/negative to negative/positive only once.}.
+
+
+
+\begin{table}[H]%
+	\def\arraystretch{1}
+	\begin{center}
+		{\sc \caption{Responses To Temporary, Negative Discount Rate Shock}}
+		\begin{adjustbox}{width=1\textwidth}
+			\setlength{\tabcolsep}{2pt}
+			\resizebox{\textwidth}{!}{
+				\begin{tabular}{lccccccccc}
+					\multicolumn{6}{c}{} \\ \hline
+					\textbf{Categories}  & \textbf{$R(\pi_{t+j})$} && \textbf{$R(\pi_{t+k})$} && \textbf{$R(\widetilde{y_{t+j}}$)} && \textbf{$R(\widetilde{y}_{t+k})$} && \\
+					\specialrule{1pt}{0pt}{0pt} %inserts single line
+					%\textbf{Categories} \\
+					FL/UA & $-$ && $-$ && $-$ && $-$ \\ 
+					BL/UA & $-$ && $-$ && $-$ && $+$ \\
+					FL/A & $-$ && $-$ && $+$ && $-$ \\
+					BL/A & $-$ && $-$ && $-$ && $+$ \\
+					\specialrule{0.5pt}{0pt}{0pt}
+					\hline
+					\hline
+			\end{tabular}}
+		\end{adjustbox}
+	\end{center}
+	{\footnotesize{Note: FL/BL refers to forward looking/backward looking expectations, A/UA refers to anticipated/unanticipated shock types and $R(x_{t+j})$ refers to the impulse response of variable $x$ in the period starting from $t+j$.}} % is used to refer this table in the text
+\end{table}
+
+
+Hence, the welfare effects of discount rate shocks also depend on the expectation formation process and whether the shock is anticipated or not.
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		\newpage
+		
+		\section{Conclusion}
+		
+		I demonstrate that consumer and business sentiment is a central pillar which drives the fluctuations in Pakistan's business cycles. Hence, in line with the recent trend of collecting data and doing research on sentiments by the State Bank of Pakistan, this research agenda must continue to be a priority in the future.
+		
+		
+		The models in this paper and associated impulse responses reveal that the expectation formation process is a determinant of the response of economic variables to an expectation shock or preference shock. Moreover, the response of central banks to expectation shocks is a crucial determinant of dynamics for aggregate output and inflation which are effected by the nominal and real interest rates. Lastly, whether the discount rate shock is anticipated or not is also a key determinant of the dynamic responses of various quantities and prices to the same shocks. Ultimately, the welfare effects of these shocks are interconnected with whether expectations are forward or backward looking and whether the shocks are anticipated or not.
+		
+		
+		Surprisingly little is known about the expectation formation process of consumers and firms in Pakistan. We need to encourage micro-research in this area so that the role of consumer and business confidence can be better understood in the context of Pakistan's business cycles. We need the State Bank of Pakistan and economic ministries to be cognizant of self-fulfilling beliefs as drivers of business cycles. Policy makers should design policies which maneuver market sentiments more effectively through press releases and frequent information sharing with the aim of making business cycle fluctuations more docile. Ultimately, more dormant business cycles will translate into higher social welfare in Pakistan through various channels including encouraging foreign direct investments, local investments in productive and innovative sectors with higher risks, the direct welfare effects on workers and consumers due to a modest business cycle fluctuation and so on.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		\newpage
+		
+		
+		
+		
+		
+		\section{Appendix}
+		
+		
+		
+		
+	
+	\subsection{New Keynesian Model}
+	
+	In this appendix, I present the key set of model equations for a standard New Keynesian model. These equations are provided for the purpose of completion and they hold in the steady state.
+	
+	For instance, $i^{ann} = i \times 4$ clarifies that annualized interest rates are four times as high as quarterly interest rates. Similarly, the steady state inflation rate is assumed to be $0$ and so on.
+	
+	\begin{equation*}
+		\Omega = \frac{1-{{\alpha}}}{1-{{\alpha}}+{{\alpha}}\, {{\epsilon}}}
+	\end{equation*}
+
+\begin{equation*}
+	\psi\_n\_ya = \frac{1+{{\varphi}}}{{{\alpha}}+{{\varphi}}+\left(1-{{\alpha}}\right)\, {{\sigma}}}
+\end{equation*}
+\begin{equation*}
+	\lambda = \frac{\left(1-{{\theta}}\right)\, \left(1-{{\theta}}\, {{\beta}}\right)}{{{\theta}}}\, {\Omega}
+\end{equation*}
+\begin{equation*}
+	\kappa = {\lambda}\, \left({{\sigma}}+\frac{{{\alpha}}+{{\varphi}}}{1-{{\alpha}}}\right)
+\end{equation*}
+% Equation 1
+\begin{equation*}
+	{{\pi}}={{\beta}}\, {{\pi}}+{\kappa}\, {{\tilde y}}
+\end{equation*}
+% Equation 2
+\begin{equation*}
+	{{\tilde y}}={{\tilde y}}+\frac{\left(-1\right)}{{{\sigma}}}\, \left({{i}}-{{\pi}}-{{r^{nat}}}\right)
+\end{equation*}
+% Equation 3
+\begin{equation*}
+	{{i}}={{\pi}}\, {{\phi_{\pi}}}+{{\phi_{y}}}\, {{\hat y}}+{{\nu}}
+\end{equation*}
+% Equation 4
+\begin{equation*}
+	{{r^{nat}}}=\left(-{{\sigma}}\right)\, {\psi\_n\_ya}\, \left(1-{{\rho_a}}\right)\, {{a}}+\left(1-{{\rho_{z}}}\right)\, {{z}}
+\end{equation*}
+% Equation 5
+\begin{equation*}
+	{{r^r}}={{i}}-{{\pi}}
+\end{equation*}
+% Equation 6
+\begin{equation*}
+	{{y^{nat}}}={\psi\_n\_ya}\, {{a}}
+\end{equation*}
+% Equation 7
+\begin{equation*}
+	{{\tilde y}}={{y}}-{{y^{nat}}}
+\end{equation*}
+% Equation 8
+\begin{equation*}
+	{{\nu}}={{\nu}}\, {{\rho_{\nu}}}+{{\varepsilon_\nu}}
+\end{equation*}
+% Equation 9
+\begin{equation*}
+	{{a}}={{\rho_a}}\, {{a}}+{{\varepsilon_a}}
+\end{equation*}
+% Equation 10
+\begin{equation*}
+	{{y}}={{a}}+\left(1-{{\alpha}}\right)\, {{n}}
+\end{equation*}
+% Equation 11
+\begin{equation*}
+	{{z}}={{\rho_{z}}}\, {{z}}-{{\varepsilon_z}}-{{\tau_z}}
+\end{equation*}
+% Equation 12
+\begin{equation*}
+	{{\Delta m}}={{\pi}}\, 4
+\end{equation*}
+% Equation 13
+\begin{equation*}
+	{{m-p}}={{y}}-{{i}}\, {{\eta}}
+\end{equation*}
+% Equation 14
+\begin{equation*}
+	{{i^{ann}}}={{i}}\, 4
+\end{equation*}
+% Equation 15
+\begin{equation*}
+	{{r^{r,ann}}}={{r^r}}\, 4
+\end{equation*}
+% Equation 16
+\begin{equation*}
+	{{r^{nat,ann}}}={{r^{nat}}}\, 4
+\end{equation*}
+% Equation 17
+\begin{equation*}
+	{{\pi^{ann}}}={{\pi}}\, 4
+\end{equation*}
+% Equation 18
+\begin{equation*}
+	{{\hat y}}={{y}}-({{y}})
+\end{equation*}
+% Equation 19
+\begin{equation*}
+	{{\pi}}=0
+\end{equation*}
+% Equation 20
+\begin{equation*}
+	{{y}}={{c}}
+\end{equation*}
+% Equation 21
+\begin{equation*}
+	{{w}}-{{p}}={{\sigma}}\, {{c}}+{{\varphi}}\, {{n}}
+\end{equation*}
+% Equation 22
+\begin{equation*}
+	{{\frac{w}{p}}}={{w}}-{{p}}
+\end{equation*}
+% Equation 23
+\begin{equation*}
+	{{m}}={{m-p}}+{{p}}
+\end{equation*}
+% Equation 24
+\begin{equation*}
+	{{\mu}}={{y}}\, \left(-\left({{\sigma}}+\frac{{{\alpha}}+{{\varphi}}}{1-{{\alpha}}}\right)\right)+{{a}}\, \frac{1+{{\varphi}}}{1-{{\alpha}}}
+\end{equation*}
+% Equation 25
+\begin{equation*}
+	{{\hat \mu}}={{\tilde y}}\, \left(-\left({{\sigma}}+\frac{{{\alpha}}+{{\varphi}}}{1-{{\alpha}}}\right)\right)
+\end{equation*}
+
+
+		
+	
+	
+	\newpage
+	%_________________ End of Main Matter_________________%
+	%_________________ Reference Section _______________%
+	\phantomsection % allows for correct link to Table of Contents
+	\addcontentsline{toc}{section}{References} % Adds the line "References" to Table of contents
+	\singlespacing
+	%\bibliography{references0} % Uses the Bibtex-file mybibfile.bib
+	\newpage
+	\bibliographystyle{aer}
+	\bibliography{references0}
+	\clearpage
+	%_________________ Space for Supplementary Material _______________%
+	
+	
+	
+	
+	%\section*{Appendix}
+	
+	
+	
+	
+	
+\end{document}
+
+
